@@ -1,0 +1,68 @@
+@import 'easymde/dist/easymde.min.css';
+
+.easyMde {
+  @apply relative rounded-md border border border-gray-300 dark:border-[rgb(var(--dark-300))] overflow-hidden;
+
+  &:has(.form-invalid) {
+    @apply border-red-600 dark:border-red-700;
+  }
+
+  &:has(.CodeMirror-focused) {
+    @apply ring ring-gray-200 ring-opacity-70;
+  }
+
+  &:has(.form-invalid):has(.CodeMirror-focused) {
+    @apply ring-red-400 ring-opacity-20 dark:ring-red-600 dark:ring-opacity-40;
+  }
+
+  & > textarea {
+    @apply absolute !block h-full w-full opacity-0;
+  }
+
+  .editor-toolbar {
+    @apply flex flex-wrap items-center gap-x-px dark:bg-[rgb(var(--dark-800))] border-0 border-b border-gray-300 dark:border-[rgb(var(--dark-300))];
+
+    button.active {
+      @apply border-transparent bg-[rgb(var(--primary))] text-white hover:border-transparent hover:bg-opacity-75 dark:hover:border-transparent;
+    }
+
+    button:hover {
+      @apply border-gray-300 bg-transparent dark:border-[rgb(var(--dark-300))];
+    }
+
+    i.separator {
+      @apply border-gray-300 dark:border-[rgb(var(--dark-300))];
+    }
+    &.fullscreen {
+      @apply rounded-none border-b border-solid border-gray-300 dark:border-[rgb(var(--dark-300))];
+    }
+  }
+
+  .prose {
+    @apply max-w-full bg-white p-4 dark:bg-[rgb(var(--dark-800))];
+  }
+
+  .CodeMirror {
+    @apply dark:bg-[rgb(var(--dark-800))] border-none dark:bg-[rgb(var(--dark-800))];
+
+    &-line {
+      @apply dark:text-white;
+    }
+
+    &-cursor {
+      @apply dark:border-white;
+    }
+  }
+
+  .editor-preview-side {
+    @apply dark:border-[rgb(var(--dark-300))];
+  }
+}
+
+.dark {
+  .easyMde {
+    &:has(.CodeMirror-focused) {
+      --tw-ring-color: rgba(var(--dark-100), 0.3);
+    }
+  }
+}
