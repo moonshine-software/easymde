@@ -21,7 +21,7 @@ class Markdown extends Textarea
         'renderingConfig',
     ];
 
-    public function getAssets(): array
+    protected function assets(): array
     {
         return [
             Css::make('vendor/moonshine-easymde/easymde.css'),
