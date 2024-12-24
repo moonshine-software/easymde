@@ -57,6 +57,11 @@
   .editor-preview-side {
     @apply dark:border-[rgb(var(--dark-300))];
   }
+
+  .editor-toolbar.fullscreen,
+  .CodeMirror-fullscreen {
+    @apply z-[150];
+  }
 }
 
 .dark {
