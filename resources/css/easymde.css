@@ -1,14 +1,14 @@
 @import 'easymde/dist/easymde.min.css';
 
 .easyMde {
-  @apply relative rounded-md border border border-gray-300 dark:border-[rgb(var(--dark-300))] overflow-hidden;
+  @apply relative rounded-md border border-gray-300 dark:border-dark-300 overflow-hidden;
 
   &:has(.form-invalid) {
     @apply border-red-600 dark:border-red-700;
   }
 
   &:has(.CodeMirror-focused) {
-    @apply ring ring-gray-200 ring-opacity-70;
+    @apply ring ring-gray-200 ring-opacity-70 dark:ring-dark-100 dark:ring-opacity-30;
   }
 
   &:has(.form-invalid):has(.CodeMirror-focused) {
@@ -20,30 +20,30 @@
   }
 
   .editor-toolbar {
-    @apply flex flex-wrap items-center gap-x-px dark:bg-[rgb(var(--dark-800))] border-0 border-b border-gray-300 dark:border-[rgb(var(--dark-300))];
+    @apply flex flex-wrap items-center gap-x-px dark:bg-dark-800 border-0 border-b border-gray-300 dark:border-dark-300;
 
     button.active {
-      @apply border-transparent bg-[rgb(var(--primary))] text-white hover:border-transparent hover:bg-opacity-75 dark:hover:border-transparent;
+      @apply border-transparent bg-primary text-white hover:border-transparent hover:bg-opacity-75 dark:hover:border-transparent;
     }
 
     button:hover {
-      @apply border-gray-300 bg-transparent dark:border-[rgb(var(--dark-300))];
+      @apply border-gray-300 bg-transparent dark:border-dark-300;
     }
 
     i.separator {
-      @apply border-gray-300 dark:border-[rgb(var(--dark-300))];
+      @apply border-gray-300 dark:border-dark-300;
     }
     &.fullscreen {
-      @apply rounded-none border-b border-solid border-gray-300 dark:border-[rgb(var(--dark-300))];
+      @apply rounded-none border-b border-solid border-gray-300 dark:border-dark-300;
     }
   }
 
   .prose {
-    @apply max-w-full bg-white p-4 dark:bg-[rgb(var(--dark-800))];
+    @apply max-w-full bg-white p-4 dark:bg-dark-800;
   }
 
   .CodeMirror {
-    @apply dark:bg-[rgb(var(--dark-800))] border-none dark:bg-[rgb(var(--dark-800))];
+    @apply dark:bg-dark-800 border-none dark:bg-dark-800;
 
     &-line {
       @apply dark:text-white;
@@ -55,19 +55,11 @@
   }
 
   .editor-preview-side {
-    @apply dark:border-[rgb(var(--dark-300))];
+    @apply dark:border-dark-300;
   }
 
   .editor-toolbar.fullscreen,
   .CodeMirror-fullscreen {
     @apply z-[150];
-  }
-}
-
-.dark {
-  .easyMde {
-    &:has(.CodeMirror-focused) {
-      --tw-ring-color: rgba(var(--dark-100), 0.3);
-    }
   }
 }
