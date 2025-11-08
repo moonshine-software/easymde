@@ -5,13 +5,17 @@
   border: 1px solid var(--ms-cm-base-stroke);
   border-radius: var(--ms-form-default-radius);
   overflow: hidden;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
 
   &:has(.form-invalid) {
     border: 1px solid var(--ms-cm-error);
   }
 
   &:has(.CodeMirror-focused) {
-    box-shadow: 0 0 0 3px rgb(var(--ms-cm-base-stroke) / 0.7);
+    border-color: var(--ms-form-focus-border-color);
+    box-shadow: 0 0 0 var(--ms-form-focus-ring-width) color-mix(in oklab, var(--ms-form-focus-ring-color) 10%, transparent);
   }
 
   &:has(.form-invalid):has(.CodeMirror-focused) {
@@ -88,6 +92,10 @@
   .CodeMirror-cursor {
     border: 0;
     border-left: 1px solid var(--ms-cm-base-text);
+  }
+
+  pre.CodeMirror-line-like {
+    color: var(--ms-cm-base-text);
   }
 }
 
