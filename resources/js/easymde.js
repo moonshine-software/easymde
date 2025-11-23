@@ -13,6 +13,8 @@ document.addEventListener('alpine:init', () => {
       this.$el.addEventListener('reset', () => {
         this.instance.value(this.$el.value)
       })
+
+      this.$el.style.display = ''
     },
 
     config() {
